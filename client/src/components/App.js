@@ -5,12 +5,12 @@ import * as actions from '../actions';
 
 import Header from './Header';
 import Landing from './Landing';
+import Payments from './Payments';
 const Dashboard = () => <h2>Dashboard</h2>;
 const SurveyNew = () => <h2>SurveyNew</h2>;
 
 class App extends Component {
   componentDidMount() {
-    console.log(this.props);
     this.props.fetchUser();
   }
 
@@ -21,6 +21,8 @@ class App extends Component {
           <div>
             <Header />
             <Route exact path="/" component={Landing} />
+            <Route exact path="/payments" component={Payments} />
+            {/* <Route exact path="/payments"/> */}
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />
           </div>

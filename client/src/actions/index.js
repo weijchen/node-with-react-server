@@ -9,7 +9,8 @@ export const fetchUser = () => async dispatch => {
 
 // post token to the backend server
 export const handleToken = (token) => async dispatch => {
-  const res = await axios.post('/api/stripe', token);
+  console.log("hi");
+  const res = await axios.post('/api/payments', token);
 
-  dispatch({ type: FETCH_USER, payoload: res.data });
+  dispatch({ type: FETCH_USER, payload: res.data });
 };

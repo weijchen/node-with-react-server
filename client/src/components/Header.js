@@ -13,7 +13,7 @@ class Header extends Component {
           return <li><a href="/auth/google">Login With Google</a></li>;
         default:
           return [
-            <li key="1"><Payments /></li>,
+            <li key="1"><a href="/payments">Pay</a></li>,
             <li key="2"><a href="/api/logout">Logout</a></li>
           ];
       }
