@@ -1,4 +1,4 @@
-const passport = require("passport")
+const passport      = require("passport")
 
 module.exports = app => {
   app.get(
@@ -21,7 +21,7 @@ module.exports = app => {
     res.redirect('/');
   });
 
-  app.get('/api/current_user', (req, res) => {
-    res.send(req.session);
+  app.get('/api/current_user', async (req, res) => {
+    res.send(req.user);
   });
 };

@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import { connect } from 'react-redux';
@@ -13,7 +13,7 @@ class Payments extends Component {
       <div className="App">
         <Elements 
           stripe={promise}
-          token={(token) => this.props.handleToken(token)}>
+        >
           <CheckoutForm />
         </Elements>
       </div>

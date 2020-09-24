@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Payments from './Payments';
 
 class Header extends Component {
   renderContent() {
-    if (this.props.auth == null) {
-      return;
-    } else {
-      switch (this.props.auth.passport.user) {
-        case undefined:
-          return <li><a href="/auth/google">Login With Google</a></li>;
-        default:
-          return [
-            <li key="1"><a href="/payments">Pay</a></li>,
-            <li key="2"><a href="/api/logout">Logout</a></li>
-          ];
-      }
+    switch (this.props.auth) {
+      case null:
+        return;
+      case false:
+        return <li><a href="/auth/google">Login With Google</a></li>;
+      default:
+        return [
+          <li key="1"><a href="/payments">Pay</a></li>,
+          <li key="2" style={{ margin: '0 10px' }}>
+            Credits: { this.props.auth.credits }
+          </li>,
+          <li key="3"><a href="/api/logout">Logout</a></li>
+        ];
     }
   }
 
@@ -25,7 +25,7 @@ class Header extends Component {
       <nav>
         <div className="nav-wrapper">
           <Link 
-            to={this.props.auth != null && this.props.auth.passport !== undefined && this.props.auth.passport.user !== undefined ? '/surveys': '/'} 
+            to={this.props.auth ? '/surveys' : '/'}
             className="left brand-logo"
           >
             Emaily
