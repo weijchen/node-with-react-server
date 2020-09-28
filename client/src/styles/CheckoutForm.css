@@ -63,7 +63,7 @@ input {
   margin-bottom: 32px;
 }
 /* Buttons and links */
-button {
+button.payment-form {
   background: #5469d4;
   font-family: Arial, sans-serif;
   color: #ffffff;
@@ -78,13 +78,14 @@ button {
   box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
   width: 100%;
 }
-button:hover {
+button.payment-form:hover {
   filter: contrast(115%);
 }
-button:disabled {
+button.payment-form:disabled {
   opacity: 0.5;
   cursor: default;
 }
+
 /* spinner/processing state, errors */
 .spinner,
 .spinner:before,

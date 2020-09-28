@@ -3,7 +3,7 @@ const passport        = require("passport"),
       mongoose        = require("mongoose"),
       keys            = require("../config/keys")
 
-const User            = mongoose.model('User')
+const User            = mongoose.model('users');
 
 // user here is the user we put into the database
 passport.serializeUser((user, done) => {
