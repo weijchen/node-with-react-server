@@ -7,8 +7,8 @@ const express         = require("express"),
       keys            = require("./config/keys"),
       PORT            = process.env.PORT || 5000
 
-require("./models/User");
 require("./models/Survey");
+require("./models/User");
 require("./services/passport");
 
 mongoose.connect(keys.mongoURI, {
