@@ -1,6 +1,5 @@
 // SurveyField contains logic to render a single label and text input
 import React from 'react';
-import { Field } from 'redux-form';
 
 export default ({ input, label, meta: { error, touched } }) => {
   

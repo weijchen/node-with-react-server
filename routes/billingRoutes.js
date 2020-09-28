@@ -1,7 +1,7 @@
 const keys          = require('../config/keys'),
       bodyParser    = require("body-parser"),
-      requireLogin  = require("../middlewares/requireLogin");
-      stripe        = require('stripe')(keys.stripeSecretKey)
+      stripe        = require('stripe')(keys.stripeSecretKey),
+      requireLogin  = require("../middlewares/requireLogin")
 
 
 module.exports = app => {
@@ -26,7 +26,6 @@ module.exports = app => {
         currency: 'usd',
         metadata: { user: req.user.id },
       });
-      
       res.send({
         clientSecret: paymentIntent.client_secret,
         paymentIntent: paymentIntent

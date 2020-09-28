@@ -3,9 +3,9 @@ const mongoose        = require('mongoose'),
       { Path }        = require('path-parser'),
       { URL }         = require('url'), // default in node.js
       requireLogin    = require("../middlewares/requireLogin"),
-      requireCredit   = require("../middlewares/requireCredit"),
-      Mailer          = require("../services/Mailer");
-      surveyTemplate  = require("../services/emailTemplates/surveyTemplate");
+      requireCredits   = require("../middlewares/requireCredits"),
+      Mailer          = require("../services/Mailer"),
+      surveyTemplate  = require("../services/emailTemplates/surveyTemplate")
 
 const Survey          = mongoose.model("surveys");
 
@@ -37,7 +37,7 @@ module.exports = app => {
         Survey.updateOne({
           _id: surveyId,
           recipients: {
-            $elemMatch: { email: email, responded: false}
+            $elemMatch: { email: email, responded: false }
           }
         }, {
           $inc: { [choice]: 1 },  // increment
@@ -50,7 +50,7 @@ module.exports = app => {
     res.send({});
   });
 
-  app.post("/api/surveys", requireLogin, requireCredit, async (req, res) => {
+  app.post("/api/surveys", requireLogin, requireCredits, async (req, res) => {
     const { title, subject, body, recipients} = req.body;
 
     const survey = new Survey({

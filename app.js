@@ -1,15 +1,15 @@
-const express         = require("express"),
-      mongoose        = require("mongoose"),
-      cookieSession   = require("cookie-session"),
-      passport        = require("passport"),
-      bodyParser      = require("body-parser"),
-      
-      keys            = require("./config/keys"),
-      PORT            = process.env.PORT || 5000
-
-require("./models/Survey");
+const express         = require("express");
+const mongoose        = require("mongoose");
+const cookieSession   = require("cookie-session");
+const passport        = require("passport");
+const bodyParser      = require("body-parser");
+const keys            = require("./config/keys");
+const PORT            = process.env.PORT || 5000;
 require("./models/User");
+require("./models/Survey");
 require("./services/passport");
+
+mongoose.Promise = global.Promise;
 
 mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true,
