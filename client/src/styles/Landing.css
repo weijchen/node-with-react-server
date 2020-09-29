@@ -1,0 +1,19 @@
+div#landing {
+  background-image: url('https://images.unsplash.com/photo-1547306767-5903924bbffd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1280&q=100');
+  background-size: hover;
+  height: 600px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+h1#landing-title {
+  font-family: 'Lobster', cursive;
+  color: black;
+  padding-top: 250px;
+}
+
+p#landing-content {
+  font-family: 'Sansita Swashed', cursive;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: medium;
+}

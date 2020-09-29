@@ -13,7 +13,7 @@ class Header extends Component {
         return [
           <li key="1"><a href="/payments">Pay</a></li>,
           <li key="2" style={{ margin: '0 10px' }}>
-            Credits: { this.props.auth.credits }
+            Your Credits: { this.props.auth.credits }
           </li>,
           <li key="3"><a href="/api/logout">Logout</a></li>
         ];
@@ -23,10 +23,11 @@ class Header extends Component {
   render() {
     return (
       <nav>
-        <div className="nav-wrapper">
+        <div className="nav-wrapper" style={{background: "#1C76D7"}}>
           <Link 
             to={this.props.auth ? '/surveys' : '/'}
             className="left brand-logo"
+            style={{marginLeft: "10px", fontFamily: "'Lobster', cursive"}}
           >
             Survey Cookies
           </Link>

@@ -113,7 +113,7 @@ export default function CheckoutForm() {
       {/* Show a success message upon completion */}
       <p className={succeeded ? "result-message" : "result-message hidden"}>
         Payment succeeded, <a href="/payments">refresh</a> to see the result or check out in your
-        <a href={`/payments`}>{" "}Stripe dashboard.</a>
+        <a href={`/surveys`}>{" "}Stripe dashboard.</a>
       </p>
     </form>
   );

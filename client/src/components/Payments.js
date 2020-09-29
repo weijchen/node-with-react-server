@@ -10,7 +10,11 @@ const promise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 class Payments extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{ textAlign: "center"}}>
+        <h6 style={{ fontFamily: "'Sansita Swashed', cursive"}}>
+          *You could add your credits with a fake card!
+        </h6>
+
         <Elements 
           stripe={promise}
         >
