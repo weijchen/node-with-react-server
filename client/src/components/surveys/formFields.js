@@ -1,6 +1,7 @@
 export default [
-  { label: "Survey Title", name: "title" },
-  { label: "Signature", name: "sender" },
-  { label: "Email Body", name: "body" },
-  { label: "Recipient List", name: "recipients" }
+  { label: "Email Title", name: "subject" },   // email title
+  { label: "Survey Title", name: "title" },       // Survey title
+  { label: "Signature", name: "signature"},       // sender's identity
+  { label: "Email Body", name: "body" },          // Survey content
+  { label: "Recipient List", name: "recipients" } // Recipient list
 ];

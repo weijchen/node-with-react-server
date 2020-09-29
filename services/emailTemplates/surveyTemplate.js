@@ -15,7 +15,7 @@ module.exports = survey => {
           <div>
             <a href="${keys.redirectDomain}/api/surveys/${survey.id}/no">No</a>
           </div>
-          <h6>This survey is created by: ${survey.sender}</h6>
+          <h6>This survey is created by: ${survey.signature}</h6>
           </div>
       </body>
     </html>

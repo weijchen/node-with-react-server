@@ -4,9 +4,10 @@ const mongoose   = require('mongoose'),
 const RecipientSchema = require("./Recipient");
 
 const surveySchema = new Schema({
+  subject: String,
   title: String,
   body: String,
-  subject: String,
+  signature: String,
 
   // subdocument collection: only connect to a single survey
   recipients: [RecipientSchema],
