@@ -80,7 +80,9 @@ module.exports = {
 ```
 
 8. Activate the server
-> $ npm run dev
+```
+$ npm run dev
+```
 
 9. Find the message for successful activation
 ```
