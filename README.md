@@ -52,14 +52,19 @@ Clone this repository to your local machine
 5. Create an Google App and get the App ID & Secret
 
 6. Enter the project folder
-> $ cd survey-cookies
-
+```
+$ cd survey-cookies
+```
 5. Install npm packages
-> $ npm install
+```
+$ npm install
+```
 
 6. Create dev.js file
-> $ touch config/dev.js
- 
+```
+$ touch config/dev.js
+```
+
 7. Store API Key in dev.js file and save
 ```
 module.exports = {
