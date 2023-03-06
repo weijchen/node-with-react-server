@@ -1,5 +1,5 @@
-# Survey Cookies
-Survey Cookies :cookie: is a web-base application built with Node.js, Express, and MongoDB. It helps users to send surveys to their customers. Users can easily view the responses with a clear format
+# Survey Monsters
+Survey Monsters :cookie: is a web-base application built with Node.js, Express, and MongoDB. It helps users to send surveys to their customers. Users can easily view the responses with a clear format
 
 Visit at: https://surveycookies-67932.herokuapp.com/
 
@@ -33,7 +33,7 @@ Visit at: https://surveycookies-67932.herokuapp.com/
 ### Clone
 Clone this repository to your local machine
 
-`$ git clone https://github.com/weijchen/survey-cookies`
+`$ git clone https://github.com/weijchen/survey-monsters`
 
 
 ### Setup
@@ -53,7 +53,7 @@ Clone this repository to your local machine
 
 6. Enter the project folder
 ```
-$ cd survey-cookies
+$ cd survey-monsters
 ```
 5. Install npm packages
 ```
@@ -65,7 +65,7 @@ $ npm install
 $ touch config/dev.js
 ```
 
-7. Store API Key in dev.js file and save
+7. Store API Key under /config/dev.js file and save
 ```
 module.exports = {
   googleClientID: <YOUR GOOGLE_CLIENT_ID>,

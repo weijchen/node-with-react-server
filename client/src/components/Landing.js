@@ -6,7 +6,7 @@ const Landing = () => {
     <div className="container-fluid" id="landing">
       <div style={{textAlign: 'center', height: "300wh"}}>
         <h1 id="landing-title">
-          Survey Cookies <i className="material-icons medium">thumbs_up_down</i>
+          Survey Monsters <i className="material-icons medium">thumbs_up_down</i>
         </h1>
         <p id="landing-content">
           The best application which helps collecting feedbacks from your users!

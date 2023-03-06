@@ -20,7 +20,7 @@ mongoose.connect(keys.mongoURI, {
 .then(() => console.log("Connected to DB!"))
 .catch(error => console.log(error.message));
 
-const app             = express();
+const app = express();
 
 // each use() is a middleware
 app.use(bodyParser.json());
