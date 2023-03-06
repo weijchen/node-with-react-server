@@ -1,11 +1,11 @@
 // import libraries
-const express         = require("express");
-const mongoose        = require("mongoose");
-const cookieSession   = require("cookie-session");
-const passport        = require("passport");
-const bodyParser      = require("body-parser");
-const keys            = require("./config/keys");
-const PORT            = process.env.PORT || 5000;
+const express = require("express");
+const mongoose = require("mongoose");
+const cookieSession = require("cookie-session");
+const passport = require("passport");
+const bodyParser = require("body-parser");
+const keys = require("./config/keys");
+const PORT = process.env.PORT || 5000;
 require("./models/User");
 require("./models/Survey");
 require("./services/passport");
@@ -17,8 +17,8 @@ mongoose.connect(keys.mongoURI, {
   useCreateIndex: true,
   useUnifiedTopology: true
 })
-.then(() => console.log("Connected to DB!"))
-.catch(error => console.log(error.message));
+  .then(() => console.log("Connected to DB!"))
+  .catch(error => console.log(error.message));
 
 const app = express();
 
