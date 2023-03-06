@@ -1,5 +1,6 @@
 const passport        = require("passport"),
-      GoogleStrategy  = require("passport-google-oauth20").Strategy,
+      // GoogleStrategy  = require("passport-google-oauth20").Strategy,
+      FacebookStrategy = require("passport-facebook").Strategy,
       mongoose        = require("mongoose"),
       keys            = require("../config/keys")
 
@@ -18,22 +19,36 @@ passport.deserializeUser((id, done) => {
 
 // setting up the google oauth
 passport.use(
-  new GoogleStrategy( // by default, setted as 'google' identifier
-    {
-      clientID: keys.googleClientID,
-      clientSecret: keys.googleClientSecret,
-      callbackURL: '/auth/google/callback',
-      proxy: true
-    }, 
-    async (accessToken, refreshToken, profile, done) => {
-      const existingUser = await User.findOne({ googleId: profile.id });
-      if (existingUser) {
-        return done(null, existingUser);
-      } 
-      const user = await new User({ googleId: profile.id }).save();
-      done(null, user);
-    }
-  )
+  // new GoogleStrategy( // by default, set as 'google' identifier
+  //   {
+  //     clientID: keys.googleClientID,
+  //     clientSecret: keys.googleClientSecret,
+  //     callbackURL: '/auth/google/callback',
+  //     proxy: true
+  //   }, 
+  //   async (accessToken, refreshToken, profile, done) => {
+  //     const existingUser = await User.findOne({ googleId: profile.id });
+  //     if (existingUser) {
+  //       return done(null, existingUser);
+  //     } 
+  //     const user = await new User({ googleId: profile.id }).save();
+  //     done(null, user);
+  //   }
+  // ),
 
   // TODO: add facebook authentication
+  new FacebookStrategy({
+    clientID: keys.facebookAppID,
+    clientSecret: keys.facebookAppSecret,
+    callbackURL: 'https://www.example.com/oauth2/redirect/facebook'
+  },
+  async (accessToken, refreshToken, profile, done) => {
+    const existingUser = await User.findOne({ facebookId: profile.id });
+    if (existingUser) {
+      return done(null, existingUser);
+    } 
+    const user = await new User({ googleId: profile.id }).save();
+    done(null, user);
+  }
+)
 );
