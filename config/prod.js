@@ -4,5 +4,7 @@ module.exports = {
   facebookAppID: process.env.FACEBOOK_APP_ID,
   facebookAppSecret: process.env.FACEBOOK_APP_SECRET,
   mongoURI: process.env.MONGO_URI,
-  cookieKey: process.env.GOOGLE_CLIENT_ID
+  cookieKey: process.env.GOOGLE_CLIENT_ID,
+  stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+  stripeSecretKey: process.env.STRIPE_SECRET_KEY
 }
