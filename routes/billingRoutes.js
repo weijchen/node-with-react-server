@@ -1,7 +1,7 @@
-const keys          = require('../config/keys'),
-      bodyParser    = require("body-parser"),
-      stripe        = require('stripe')(keys.stripeSecretKey),
-      requireLogin  = require("../middlewares/requireLogin")
+const keys = require('../config/keys')
+const bodyParser = require("body-parser")
+const stripe = require('stripe')(keys.stripeSecretKey)
+const requireLogin = require("../middlewares/requireLogin")
 
 
 module.exports = app => {
@@ -9,11 +9,11 @@ module.exports = app => {
     return 500;
   };
 
-  app.post('/api/payments', bodyParser.raw({type: 'application/json'}), requireLogin, async (req, res) => {
+  app.post('/api/payments', bodyParser.raw({ type: 'application/json' }), requireLogin, async (req, res) => {
     let event;
 
     try {
-      event = {type: "payment_intent.succeeded"};
+      event = { type: "payment_intent.succeeded" };
     } catch (err) {
       res.status(400).send(`Webhook Error: ${err.message}`);
     }

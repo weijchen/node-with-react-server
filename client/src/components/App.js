@@ -21,8 +21,8 @@ class App extends Component {
         <div className="container" style={{ margin: "30px auto" }}>
           <Route exact path="/" component={Landing} />
           <Route exact path="/payments" component={Payments} />
-          {/* <Route exact path="/surveys" component={Dashboard} /> */}
-          {/* <Route path="/surveys/new" component={SurveyNew} /> */}
+          <Route exact path="/surveys" component={Dashboard} />
+          <Route path="/surveys/new" component={SurveyNew} />
         </div>
       </BrowserRouter>
     );
