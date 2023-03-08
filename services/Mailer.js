@@ -15,7 +15,7 @@ class Mailer {
  
     this.emails = {
       to: this.recipients,
-      from: 'surveymonsters@gmail.com',
+      from: 'surveycookies@gmail.com',
       subject: subject,
       html: htmlContent,
  

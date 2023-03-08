@@ -32,7 +32,7 @@ class Header extends Component {
             className="left brand-logo"
             style={{ marginLeft: "10px", fontFamily: "'Lobster', cursive" }}
           >
-            Survey Monsters
+            Survey Cookies
           </Link>
           <ul className="right">
             {this.renderContent()}

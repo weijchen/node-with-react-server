@@ -1,18 +1,18 @@
-const mongoose        = require('mongoose'),
-      _               = require('lodash'),
-      { Path }        = require('path-parser'),
-      { URL }         = require('url'), // default in node.js
-      requireLogin    = require("../middlewares/requireLogin"),
-      requireCredits   = require("../middlewares/requireCredits"),
-      Mailer          = require("../services/Mailer"),
-      surveyTemplate  = require("../services/emailTemplates/surveyTemplate")
+const mongoose = require('mongoose')
+const _ = require('lodash')
+const { Path } = require('path-parser')
+const { URL } = require('url')
+const requireLogin = require("../middlewares/requireLogin")
+const requireCredits = require("../middlewares/requireCredits")
+const Mailer = require("../services/Mailer")
+const surveyTemplate = require("../services/emailTemplates/surveyTemplate")
 
-const Survey          = mongoose.model("surveys");
+const Survey = mongoose.model("surveys");
 
 module.exports = app => {
   app.get('/api/surveys', requireLogin, async (req, res) => {
     const surveys = await Survey.find({ _user: req.user.id });
-      // .select({ recipients: false });
+    // .select({ recipients: false });
 
     res.send(surveys);
   });
@@ -50,7 +50,7 @@ module.exports = app => {
   });
 
   app.post("/api/surveys", requireLogin, requireCredits, async (req, res) => {
-    const { subject, title, body, signature, recipients} = req.body;
+    const { subject, title, body, signature, recipients } = req.body;
 
     const survey = new Survey({
       subject,
@@ -71,11 +71,11 @@ module.exports = app => {
 
       // Save survey
       await survey.save();
-      
+
       // handle user's credits
       req.user.credits -= 1;
       const user = await req.user.save();
-  
+
       res.send(user);
     } catch (err) {
       res.status(422).send(err);
